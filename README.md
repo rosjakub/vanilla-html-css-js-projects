@@ -1,6 +1,6 @@
 ﻿# Repozytorium służące do ćwiczeń
 
-### - Głowna zasada to branchowanie swoich zmian per "KG-Master" (pierwsza litera imienia i nazwiska + "- master" to będzie nasze repozytorium bazowe)
+### - Głowna zasada to branchowanie swoich zmian per "master/kg" ("master/" + pierwsza litera imienia i nazwiska to będzie nasze repozytorium bazowe)
 ### - Te branche będą zablokowane, jeżeli będziemy coś robić, to tworzymy brancha "Task-1" ("Task-" + numer zadania z Azure DevOpsa)
 ### - Z każdego brancha służącego do zadań będziemy sobie budować pull request, który będzie miał wymogi przeglądania, żeby został zaakceptowany
 ### - Dla każdego pojedynczego taska tworzymy nowy folder z projektem (Backend'owcy tworzą projekt w .NET w formie(API lub appka konsolowa) a frontend'owcy mogą używać reacta bądź czystego HTML + CSS + JS, moim zdaniem to ta lepsza droga do nauki)

@@ -1,4 +1,21 @@
+:root {
+  --primary-color: black;
+  --calculator-color: black;
+  --secondary-color: white;
+  --border-color: rgb(32, 32, 32);
+  --display-color: rgb(14, 14, 14);
+  --hover-color: rgb(29, 29, 29);
+  --display-text-color: white;
+  --section-color: white;
+}
+
+.second-mode {
+  --display-text-color: rgb(0, 255, 0);
+  --secondary-color: rgb(0, 255, 0);
+}
+
 body {
+  position: relative;
   margin: 0;
   padding: 0;
   width: 100vw;
@@ -9,11 +26,11 @@ body {
   align-items: center;
   font-family: "Poppins", sans-serif;
   transition: all 0.25s;
-  background-color: black;
+  background-color: var(--primary-color);
 }
 
 .container {
-  background-color: black;
+  background-color: var(--calculator-color);
   width: 480px;
   height: 710px;
   display: flex;
@@ -21,19 +38,20 @@ body {
   align-items: center;
   justify-content: center;
   border-radius: 10px;
-  border: 2px solid rgb(32, 32, 32);
+  border: 2px solid var(--border-color);
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
 
 .display-container {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.849);
   width: 440px;
   height: 100px;
   margin-bottom: 30px;
   border-radius: 10px;
-  background-color: rgb(14, 14, 14);
+  background-color: var(--display-color);
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
 
 .display-content {
@@ -42,7 +60,7 @@ body {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  color: white;
+  color: var(--display-text-color);
 }
 
 .button-container {
@@ -61,16 +79,23 @@ button {
   font-family: "Poppins", sans-serif;
   font-weight: 500;
   font-size: 2rem;
-  background-color: black;
-  color: white;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
   cursor: pointer;
   transition: all 0.25s;
-  border: 2px solid rgb(32, 32, 32);
+  border: 2px solid var(--border-color);
+  overflow: hidden;
+  position: relative;
+}
+
+button.color {
+  background-color: var(--display-color);
+  color: var();
 }
 
 button:hover {
   transform: scale(1.05);
-  background-color: rgb(29, 29, 29);
+  background-color: var(--hover-color);
 }
 
 button#equals {
@@ -87,4 +112,22 @@ button#equals:hover {
   grid-row-end: 6;
   grid-column-start: 4;
   grid-column-end: 5;
+}
+
+/* SPECIAL */
+
+body > div:first-child {
+  display: flex;
+  position: absolute;
+  z-index: -1;
+  transform: translateY(-360px);
+}
+
+img {
+  max-width: 200px;
+  margin: 0 170px;
+}
+
+#display-none {
+  display: none;
 }

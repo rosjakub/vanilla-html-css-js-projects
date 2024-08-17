@@ -3,6 +3,11 @@
   --calculator-color: black;
   --secondary-color: white;
   --border-color: rgb(32, 32, 32);
+  --calculator-border-color: linear-gradient(
+    356deg,
+    rgb(29, 29, 29) 46%,
+    rgb(61, 61, 61) 100%
+  );
   --display-color: rgb(14, 14, 14);
   --hover-color: rgb(29, 29, 29);
   --display-text-color: white;
@@ -12,6 +17,12 @@
 .second-mode {
   --display-text-color: rgb(0, 255, 0);
   --secondary-color: rgb(0, 255, 0);
+  --calculator-border-color: linear-gradient(
+    356deg,
+    rgba(22, 255, 0, 1) 100%,
+    rgba(208, 255, 232, 1) 0%
+  );
+  animation: pop 1s ease-in-out;
 }
 
 body {
@@ -38,8 +49,17 @@ body {
   align-items: center;
   justify-content: center;
   border-radius: 10px;
-  border: 2px solid var(--border-color);
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
+.container::after {
+  border-radius: 10px;
+  content: "";
+  position: absolute;
+  width: 490px;
+  height: 720px;
+  background: var(--calculator-border-color);
+  z-index: -1;
 }
 
 .display-container {
@@ -126,8 +146,39 @@ body > div:first-child {
 img {
   max-width: 200px;
   margin: 0 170px;
+  animation: rotateLeftRight 3s infinite ease-in-out;
 }
 
 #display-none {
   display: none;
+}
+
+@keyframes rotateLeftRight {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-4deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  25% {
+    transform: scale(1.1) rotate(-4deg);
+  }
+  50% {
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.1) rotate(4deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
 }
